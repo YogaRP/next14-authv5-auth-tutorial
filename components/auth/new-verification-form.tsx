@@ -25,7 +25,6 @@ const NewVerificationForm: FC<NewVerificationFormProps> = ({}) => {
       setError("Missing Token!");
       return;
     }
-    console.log(token);
 
     newVerification(token)
       .then((data) => {
@@ -36,7 +35,7 @@ const NewVerificationForm: FC<NewVerificationFormProps> = ({}) => {
       .catch(() => {
         setError("Something went wrong");
       });
-  }, [token]);
+  }, [token, success, error]);
 
   useEffect(() => {
     onSubmit();
