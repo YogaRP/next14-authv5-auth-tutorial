@@ -53,8 +53,6 @@ const SettingsPage = () => {
   });
 
   const onSubmit = (values: z.infer<typeof SettingsSchema>) => {
-    console.log(values);
-
     startTransition(() => {
       settings(values)
         .then((data) => {

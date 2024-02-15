@@ -26,6 +26,10 @@ export const login = async (
 
   const existingUser = await getUserByEmail(email);
 
+  if (existingUser.email && !existingUser.password && existingUser.accounts) {
+    return { error: "You're already registered using other provider" };
+  }
+
   if (!existingUser || !existingUser.email || !existingUser.password) {
     return { error: "Email does not exist" };
   }

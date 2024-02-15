@@ -16,7 +16,6 @@ const NewVerificationForm: FC<NewVerificationFormProps> = ({}) => {
 
   const searchParams = useSearchParams();
   const token = searchParams.get("token");
-  //   console.log(token);
 
   const onSubmit = useCallback(() => {
     if (success || error) return;
@@ -28,7 +27,6 @@ const NewVerificationForm: FC<NewVerificationFormProps> = ({}) => {
 
     newVerification(token)
       .then((data) => {
-        console.log(data);
         setSuccess(data.success);
         setError(data.error);
       })

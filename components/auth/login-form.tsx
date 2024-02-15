@@ -61,7 +61,7 @@ export const LoginForm = () => {
           }
         })
         .catch(() => {
-          setError("Something went wrong!");
+          setError("Email or Password not found!");
         });
     });
   };

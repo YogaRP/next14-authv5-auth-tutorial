@@ -6,6 +6,9 @@ export const getUserByEmail = async (email: string) => {
       where: {
         email,
       },
+      include: {
+        accounts: true,
+      },
     });
     return user;
   } catch (error) {
